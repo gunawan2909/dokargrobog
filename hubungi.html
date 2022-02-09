@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/hubungi.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <title>Dokar Grobog</title>
+</head>
+<body>
+    <header>
+        <div id="navbar">
+            <img @click="showItems=!showItems" src="src/3Bar.png">
+        </div>
+        <transition name="slide">
+        <div v-show="showItems" class="slidebar">
+            <div id="closebtn">
+                <button @click="showItems=!showItems" id="closebtn">X</button>
+            </div>
+            <div>
+                <img src="src/image 23.png">
+            </div>
+            <a href="home.html">Home</a>
+            <a href="profile.html">Profil</a>
+            <a href="pelayanan.html">Pelayanan</a>
+            <a href="produkhukum.html">Produk Hukum</a>
+            <a href="hubungi.html">Hubungi Kami</a>
+        </div>
+        </transition>
+        <div>
+            <div class="logo_box">
+                <img id="logo" src="src/image 23.png">
+                <div class="tekslogo_container">
+                    <h1 id="judul">DOKAR <span>GROBOG</span></h1>
+                    <h6 id="deskripsi">Data Online Kendaraan Bermotor Dishub Kabupaten Grobogan</h6>
+                </div>
+            </div>
+            <div class="NamaPage">
+                <h1 id="NamaPageJudul">HUBUNGI KAMI</h1>
+                <div id="garisbawah"></div>
+
+            </div>
+        </div>
+        <div>
+            <div class="search_box">
+                <input id="input" type="text" placeholder="Search">
+                <img id="search" src="src/Search Icon.png">
+            </div>
+        </div>
+    </header>
+
+
+    <div class="KontakKami">
+        <div id="Kontent">
+            <h1 id="judulKonteks">Kontak <span>Kami</span></h1>
+            <p id="KeteranganKonteks">Silahkan hubungi kami melalui kontak atau melalui form di bawah ini</p>
+            <div id="KontenSosial">
+                <img id="IconKontenSosial" src="src/Twitter.png">
+                <p id="NamaSosialMedia">@pkbdishubgrob</p>
+            </div>
+            <div id="KontenSosial">
+                <img id="IconKontenSosial" src="src/Gmail.png">
+                <p id="NamaSosialMedia">pkb.dishubgrobogan@gmail.com</p>
+            </div>
+            <div id="KontenSosial">
+                <img id="IconKontenSosial" src="src/Facebook.png">
+                <p id="NamaSosialMedia">Pengujian Kendaraan Bermotor Dinas Perhubungan Kabupaten Grobogan</p>
+            </div>
+            <div id="KontenSosial">
+                <img id="IconKontenSosial" src="src/Instragram.png">
+                <p id="NamaSosialMedia">@pkbdishubgrobogan</p>
+            </div>
+            
+        </div>
+    </div>
+   
+   
+
+
+
+
+    <footer>
+        <div class="footer_box">
+            <div id="footer_info">
+                <div>
+                    <img src="src/image 23.png">
+                </div>
+                <div id="alamat">
+                    <a id="judul_footer">Dinas Perhubungan</a>
+                    <a id="judul_footer">Kabupaten Grobogan</a><br>
+                    <a>Jl. Raya Solo No.151</a>
+                    <a>Toroh, 58172</a>
+                    <a>Telp. (0292) 422195</a>
+                </div>
+            </div>
+            <div id="pelayanan">
+                <a id="judul_footer">Pelayanan</a><br>
+                <a>Uji Baru</a><br>
+                <a>Uji Berkala</a><br>
+                <a>Numpang Uji Masuk</a><br>
+                <a>Numpang Uji Keluar</a><br>
+                <a>Mutasi Masuk</a><br>
+                <a>Mutasi Keluar</a><br>
+            </div>
+            <div id="jam">
+                <a id="judul_footer">Jam Operasional</a><br>
+                <a>Senin s/d kamis</a>
+                <a>pukul 07.30 s/d 13.00</a>
+                <a>Jumat</a>
+                <a>pukul 07.30 sd 11.00</a>
+                <a>Sabtu, minggu, dan tanggal merah</a>
+                <a>libur</a>
+            </div>
+            <div id="icon_footer">
+                <div id="sosmed_box">    
+                    <div id="sosmed">
+                        <img src="src/Linkedin.png">
+                        <img src="src/FB.png">
+                        <img src="src/IG.png">
+                    </div>
+                    <a>Copyright<span>&copy;</span> 2022 Dishub Grobogan</a>
+                </div>
+                <div>
+                    <img src="src/TUGU.png">
+                </div>
+            </div>
+        </div>
+    </footer>
+<script src="https://unpkg.com/vue@next"></script>
+<script>
+    Vue.createApp ({
+        data() {
+            return{
+                showItems: false,
+            }
+        }
+    }).mount('body')
+</script>
+</body>
+</html>
