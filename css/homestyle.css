@@ -3,12 +3,17 @@
     font-family: 'Public Sans';
     border: 0;
 }
+
+
+
+
 header {
     background-image: url("../src/headpict.png");
-    display: flex;
+    display: grid;
+    grid-template-columns: 20px, 1fr, 1fr, 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "navbar logo login pencarian";
     height: 350px;
-    flex-direction: row;
-    justify-content: space-between;
 }
 .slidebar {
     display: flex;
@@ -44,12 +49,18 @@ header {
     font-weight: 900;
     font-size: 18px;
 }
+#logo{
+    width: 60px;
+    height: 70px;
+}
 .logo_box {
+    grid-area: logo;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    justify-items: left;
     margin-top: 15px;
-    margin-right: 250px;
+    margin-right: auto;
+
 }
 .tekslogo_container {
     display: flex;
@@ -58,21 +69,24 @@ header {
     margin-left: 10px;
 }
 #judul span {
-    font-weight: 100;
+    font-weight: 1;
 }
 #judul {
     font-size: 36px;
 }
 #deskripsi {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 100;
 }
 #navbar {
+    grid-area: navbar;
     margin-top: 30px;
     margin-left: 50px;
+    margin-right: 10px;
 }
 .search_box {
-    margin-right: 50px;
+    grid-area: pencarian;
+    width: fit-content;
     margin-top: 30px;
     padding: 5px;
     border-radius: 20px;
@@ -83,31 +97,34 @@ header {
 }
 #search {
     margin-right: 3px;
+
+    
 }
 #input {
     background-color: transparent;
     border-color: transparent;
     text-decoration: none;
+    width: 100%;
 }
 #input::-webkit-input-placeholder {
     color: #FFFFFF;
 }
 footer {
     background-color: #8EB1C7;
-    height: 425px;
-}
-.footer_box {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    margin-left: 200px;
-    padding: 50px;
-    font-size: 12px;
+    padding-top: 20px;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr,1fr,1fr,2fr;
+    grid-template-areas: "info pelayanan jam icon";
+    font-size: 15px;
     font-weight: 100;
     line-height: 20px;
+    
 }
 #footer_info {
+    grid-area: info;
     display: flex;
+    justify-content: center;
 }
 #alamat {
     display: flex;
@@ -116,28 +133,32 @@ footer {
     margin-left: 10px;
 }
 #pelayanan {
+    grid-area:pelayanan;
     display: flex;
     flex-direction: column;
     align-items: left;
-    margin-left: 90px;
+    margin-left: 40%;
 }
 #jam {
+    align-content: center;
+    grid-area: jam;
     display: flex;
     flex-direction: column;
-    margin-left: 90px;
+    margin-left: 40%;
 }
 #judul_footer {
     font-weight: 900;
     line-height: normal !important;
-    font-size: 14px;
+    font-size: 16px;
 }
 #icon_footer {
-    display: flex;
+    grid-area: icon;
+    
     align-items: center;
     display: flex;
-    position: absolute;
-    right: 100px;
-    margin-top: 120px;
+    justify-content: end;
+    
+   
 }
 #sosmed_box {
     display: flex;
@@ -145,50 +166,75 @@ footer {
     flex-direction: column;
     margin-top: 50px;
 }
-main {
+.boxlogin{
+    color: #FFFFFF;
+    border-radius: 20px;
+    margin-top: 30px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    text-decoration: none;
+    padding: 5px;
+   
+    text-align: center;
+    align-items: center;
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: 10px;
+    justify-content: center;
+    border: solid 1px  #FFFFFF;
 }
-.cek_container {
-    display: flex;
-    position: absolute;
-    margin-left: 12%;
-    margin-top: 25%;
+.boxlogin p{
+    font-size: 15px;
+}
+main {
+    margin-top: 20px;
+    display: grid;
+    grid-template-rows: 1fr, 1fr;
+    grid-template-columns: 1fr,4fr,4fr,3fr;
+    gap: 1em;
+    grid-template-areas: "ekir antrian"
+                         "syarat syarat"
+                         "selesai selesai"
+                         "berita berita";
 }
 #ekir_container {
+    grid-area: ekir;
     display: flex;
     flex-direction: column;
     padding: 40px;
     border-radius: 20px;
-    background-color: #8EB1C7;
+    background-color: #8EB1C7; 
+    width: 40%;
+    margin-left: 50%;
+    
+
+  
+   
 }
+
 #input_container {
     display: flex;
     align-items: flex-start;
 }
 #judulekir {
-    margin-bottom: 15px;
-    font-weight: 900;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    font-weight: 1000;
 }
 #judulekir span {
     font-weight: 100;
-    font-size: 10px;
+    font-size: 12px;
 }
-#inputekir1 input {
-    height: 30px;
-    border-radius: 20px;
-}
-#inputekir1 input::-webkit-input-placeholder {
-    color: #b1b1b1;
-    font-size: 10px;
-}
+
 #inputekir2 input {
     height: 30px;
-    border-radius: 20px;
+    border-radius: 15px;
 }
 #inputekir2 input::-webkit-input-placeholder {
     color: #b1b1b1;
     font-size: 10px;
+    
+    
 }
 #inputekir2 {
     margin-left: 10px;
@@ -199,13 +245,14 @@ main {
     padding: 10px 20px;
     border-radius: 20px;
     color: #FFFFFF;
-    font-size: 9px;
+    font-size: 15px;
 }
 #petunjuk {
     display: flex;
     align-items: center;
-    font-size: 8px;
+    font-size: 12px;
     margin-top: 5px;
+    margin-left: 5px;
 }
 #petunjuk img {
     margin-left: 5px;
@@ -214,11 +261,13 @@ main {
     margin-left: 5px;
 }
 #antrian_container {
+    grid-area: antrian;
     display: flex;
     padding: 40px;
     border-radius: 20px;
     background-color: #8EB1C7;
-    margin-left: 20px;    
+    width: 40%;
+    
 }
 #judulantrian {
     font-weight: 900;
@@ -230,7 +279,7 @@ main {
 #tanggal_container {
     display: flex;
     align-items: center;
-    margin-top: 15px;
+    margin-top: 5px;
     border-radius: 20px;
     background-color: #222222;
     color: #FFFFFF;
@@ -250,7 +299,7 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 9px;
+    font-size: 12px;
     padding: 0px 15px;
     border-radius: 20px;
     background-color: #FFFFFF;
@@ -261,31 +310,32 @@ main {
     font-weight: 900;
 }
 .syarat_box {
-    margin-top: 20%;
+    grid-area: syarat;
     margin-left: 13%;
 }
 #judul_syarat {
     font-weight: 900;
-    font-size: 20px;
+    font-size: 25px;
 }
 #judul_syarat span {
     font-weight: 100;
+    font-size: 20px;
 }
 #judul_syarat_container h6 {
     font-weight: 100;
     margin-top: 10px;
+    font-size: 15px;
 }
 #syaratitem_container {
     display: grid;
     grid-template-columns: repeat(3, 30%);
     margin-top: 50px;
+ 
 }
 #item_container {
     display: flex;
     flex-direction: column;
     padding: 20px 10px;
-    margin-right: 20px;
-    margin-bottom: 30px;
     border-radius: 20px;
     box-shadow: 2px 2px 0px 0px #c0c0c0;
 }
@@ -303,13 +353,15 @@ main {
     display: flex;
     flex-direction: column;
     margin-top: 40px;
-    font-size: 11px;
+    font-size: 15px;
 }
 .selesai_bg {
     background-image: url("../src/bodypict.png");
+    grid-area: selesai;
     margin-top: 50px;
 }
 #selesai_container {
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -323,31 +375,37 @@ main {
 }
 #judul_selesai {
     font-weight: 900;
-    font-size: 20px;
+    font-size: 25px;
 }
 #judul_selesai span {
     font-weight: 100;
 }
 #judul_selesai_container h6{
     font-weight: 100;
+    font-size: 15px;
     margin-top: 10px;
 }
 #kendaraan_container {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     align-items: flex-start;
     justify-content: center;
     margin-top: 50px;
     background-color: #8EB1C7;
     padding: 30px;
     border-radius: 20px;
-    width: 820px;
+    margin-right: 20%;
+    
 }
 #kendaraan {
     display: flex;
+    align-items: center;
+    justify-self: center;
     flex-direction: column;
     width: 200px;
     margin-left: 5px;
     margin-right: 5px;
+    margin-top: 20px;
 }
 #kendaraan img {
     height: 40px;
@@ -360,7 +418,7 @@ main {
     color: #FFFFFF;
 }
 #jenis_kendaraan a {
-    font-size: 10px;
+    font-size: 12px;
     height: 30px;
 }
 #jmlkendaraan {
@@ -371,6 +429,7 @@ main {
     justify-content: flex-end;
 }
 .berita_container {
+    grid-area: berita;
     display: flex;
     flex-direction: column;
     margin-left: 13%;
@@ -420,3 +479,618 @@ main {
     text-align: right;
     color: #8EB1C7;
 }
+
+@media (max-width: 1440px) {
+    header {
+       
+        display: grid;
+        grid-template-columns: (3px, 1fr, 1fr, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        grid-template-areas: "navbar logo login pencarian";
+        height: 350px;
+       
+        
+    }
+    #logo{
+        width: 60px;
+        height: 70px;
+    }
+    .logo_box {
+        grid-area: logo;
+        display: flex;
+        flex-direction: row;
+        justify-items: left;
+        margin-top: 15px;
+        margin-right: auto;
+    
+    }
+    .tekslogo_container {
+        display: flex;
+        flex-direction: column;
+        color: #FFFFFF;
+        margin-left: 10px;
+    }
+    #judul span {
+        font-weight: 1;
+    }
+    #judul {
+        font-size: 36px;
+    }
+    #deskripsi {
+        font-size: 12px;
+        font-weight: 100;
+    }
+    #navbar {
+        grid-area: navbar;
+        margin-top: 30px;
+        margin-right: 5px;
+        width: 20px;
+       
+
+    }
+    .search_box {
+        grid-area: pencarian;
+        margin-right: 50px;
+        margin-top: 30px;
+        padding: 5px;
+        border-radius: 20px;
+        border: solid 1px #FFFFFF;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    #search {
+        margin-right: 3px;
+        margin-left: auto;
+        
+    }
+    #input {
+        background-color: transparent;
+        border-color: transparent;
+        text-decoration: none;
+    }
+    #input::-webkit-input-placeholder {
+        color: #FFFFFF;
+    }
+    footer {
+        background-color: #8EB1C7;
+        display: grid;
+        grid-template-rows: 1fr,1fr,1fr,1fr;
+        grid-template-areas: "info" "pelayanan" "jam" "icon";
+        font-size: 9px;
+        font-weight: 100;
+        line-height: 10px;
+        
+    }
+    #judul_footer {
+        font-weight: 900;
+        line-height: normal !important;
+        font-size: 12px;
+    }
+
+    
+    .boxlogin{
+        color: #FFFFFF;
+        border-radius: 20px;
+        margin-top: 30px;
+        display: flex;
+        flex-direction: row;
+        text-decoration: none;
+        padding: 5px;
+       
+        text-align: center;
+        align-items: center;
+        font-size: 20px;
+        margin-left: auto;
+        margin-right: 10px;
+        justify-content: center;
+        border: solid 1px  #FFFFFF;
+    }
+    .boxlogin p{
+        font-size: 15px;
+    }
+    main {
+        margin-top: 20px;
+        display: grid;
+        align-items: center;
+        grid-template-columns: 1fr,1fr,4fr,4fr,3fr;
+        grid-template-rows: 1fr;
+        gap: 1em;
+        grid-template-areas: "ekir"
+                            "antrian"
+                             "syarat"
+                             "selesai"
+                             "berita";
+    }
+    #ekir_container {
+        grid-area: ekir;
+        display: flex;
+        flex-direction: column;
+        padding: 40px;
+        border-radius: 20px;
+        background-color: #8EB1C7; 
+        width: 80%;
+        margin-left: 0px;
+        margin-left: 5%;
+     
+    }
+    
+    #antrian_container {
+        grid-area: antrian;
+        display: flex;
+        padding: 40px;
+        border-radius: 20px;
+        background-color: #8EB1C7;
+        width: 80%;
+        margin-left: 5%;
+        
+    }
+    .syarat_box {
+        grid-area: syarat;
+        margin-left: 13%;
+    }
+    #judul_syarat {
+        font-weight: 900;
+        font-size: 25px;
+    }
+    #judul_syarat span {
+        font-weight: 100;
+        font-size: 20px;
+    }
+    #judul_syarat_container h6 {
+        font-weight: 100;
+        margin-top: 10px;
+        font-size: 15px;
+    }
+    #syaratitem_container {
+        display: grid;
+        grid-template-columns: repeat(2, 40%);
+        margin-top: 50px;
+        gap:20px;
+     
+    }
+  
+    .selesai_bg {
+        background-image: url("../src/bodypict.png");
+        grid-area: selesai;
+        margin-top: 50px;
+    }
+  
+    #kendaraan_container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: flex-start;
+        justify-content: center;
+        margin-top: 50px;
+        background-color: #8EB1C7;
+        padding: 30px;
+        border-radius: 20px;
+        margin-right: 20%;
+        
+    }
+
+ 
+  
+    #berita_box {
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(3, 30%);
+        align-items: center;
+    }
+
+
+
+}
+
+
+@media (max-width: 992px) {
+    header {
+       
+        display: grid;
+        grid-template-columns: (3px, 1fr, 1fr, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        grid-template-areas: "navbar logo login pencarian";
+        height: 350px;
+       
+        
+    }
+    #logo{
+        width: 40px;
+        height: 45px;
+    }
+    .logo_box {
+        grid-area: logo;
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+        justify-content: start;
+        align-content: center;
+        margin-top: 15px;
+        margin-right: auto;
+    
+    }
+    .tekslogo_container {
+        display: flex;
+        flex-direction: column;
+        color: #FFFFFF;
+        align-items: center;
+   
+    }
+    #judul span {
+        font-weight: 100;
+    }
+    #judul {
+        font-size: 16px;
+    }
+    #deskripsi {
+        font-size: 8px;
+        font-weight: 100;
+    }
+    
+    #navbar {
+        grid-area: navbar;
+        margin-top: 30px;
+        margin-right: 5px;
+        width: 20px;
+       
+
+    }
+    .search_box {
+        grid-area: pencarian;
+        margin-right: 50px;
+        margin-top: 30px;
+        padding: 5px;
+        border-radius: 20px;
+        border: solid 1px #FFFFFF;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    #search {
+        margin-right: 3px;
+        margin-left: auto;
+        
+    }
+    #input {
+        background-color: transparent;
+        border-color: transparent;
+        text-decoration: none;
+    }
+    #input::-webkit-input-placeholder {
+        color: #FFFFFF;
+    }
+    footer {
+        background-color: #8EB1C7;
+        display: grid;
+        grid-template-rows: 1fr,1fr,1fr,1fr;
+        grid-template-areas: "info" "pelayanan" "jam" "icon";
+        font-size: 9px;
+        font-weight: 100;
+        line-height: 10px;
+        
+    }
+    #judul_footer {
+        font-weight: 900;
+        line-height: normal !important;
+        font-size: 12px;
+    }
+
+    
+    .boxlogin{
+        color: #FFFFFF;
+        border-radius: 20px;
+        margin-top: 30px;
+        display: flex;
+        flex-direction: row;
+        text-decoration: none;
+        padding: 5px;
+       
+        text-align: center;
+        align-items: center;
+        font-size: 20px;
+        margin-left: auto;
+        margin-right: 10px;
+        justify-content: center;
+        border: solid 1px  #FFFFFF;
+    }
+    .boxlogin p{
+        font-size: 15px;
+    }
+    main {
+        margin-top: 20px;
+        display: grid;
+        align-items: center;
+        grid-template-columns: 1fr,1fr,4fr,4fr,3fr;
+        grid-template-rows: 1fr;
+        gap: 1em;
+        grid-template-areas: "ekir"
+                            "antrian"
+                             "syarat"
+                             "selesai"
+                             "berita";
+    }
+    #ekir_container {
+        grid-area: ekir;
+        display: flex;
+        flex-direction: column;
+        padding: 40px;
+        border-radius: 20px;
+        background-color: #8EB1C7; 
+        width: 80%;
+        margin-left: 0px;
+        margin-left: 5%;
+     
+    }
+    
+    #antrian_container {
+        grid-area: antrian;
+        display: flex;
+        padding: 40px;
+        border-radius: 20px;
+        background-color: #8EB1C7;
+        width: 80%;
+        margin-left: 5%;
+        
+    }
+    .syarat_box {
+        grid-area: syarat;
+        margin-left: 13%;
+    }
+    #judul_syarat {
+        font-weight: 900;
+        font-size: 25px;
+    }
+    #judul_syarat span {
+        font-weight: 100;
+        font-size: 20px;
+    }
+    #judul_syarat_container h6 {
+        font-weight: 100;
+        margin-top: 10px;
+        font-size: 15px;
+    }
+    #syaratitem_container {
+        display: grid;
+        grid-template-columns: repeat(2, 40%);
+        margin-top: 50px;
+        gap:20px;
+     
+    }
+  
+    .selesai_bg {
+        background-image: url("../src/bodypict.png");
+        grid-area: selesai;
+        margin-top: 50px;
+    }
+  
+    #kendaraan_container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: flex-start;
+        justify-content: center;
+        margin-top: 50px;
+        background-color: #8EB1C7;
+        padding: 30px;
+        border-radius: 20px;
+        margin-right: 20%;
+        
+    }
+    
+ 
+  
+    #berita_box {
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(2, 40%);
+        align-items: center;
+    }
+
+
+
+}
+
+@media (max-width: 768px) {
+    header {
+       
+        display: grid;
+        grid-template-columns: (3px, 1fr, 1fr, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        grid-template-areas: "navbar logo login pencarian";
+        height: fit-content;
+       
+        
+    }
+    #logo{
+        width: 40px;
+        height: 45px;
+    }
+    .logo_box {
+        grid-area: logo;
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        margin-top: 15px;
+        margin-right: auto;
+    
+    }
+    .tekslogo_container {
+        display: flex;
+        flex-direction: column;
+        color: #FFFFFF;
+   
+    }
+    #judul span {
+        font-weight: 100;
+    }
+    #judul {
+        font-size: 16px;
+    }
+    #deskripsi {
+        font-size: 0px;
+        font-weight: 100;
+    }
+    
+    #navbar {
+        grid-area: navbar;
+        margin-top: 30px;
+        margin-right: 5px;
+        width: 20px;
+       
+
+    }
+    .search_box {
+        grid-area: pencarian;
+        margin-right: 50px;
+        margin-top: 30px;
+        padding: 5px;
+        border-radius: 20px;
+        border: solid 1px #FFFFFF;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    #search {
+        margin-right: 3px;
+        margin-left: auto;
+        
+    }
+    #input {
+        background-color: transparent;
+        border-color: transparent;
+        text-decoration: none;
+    }
+    #input::-webkit-input-placeholder {
+        color: #FFFFFF;
+    }
+    footer {
+        background-color: #8EB1C7;
+        display: grid;
+        grid-template-rows: 1fr,1fr,1fr,1fr;
+        grid-template-areas: "info" "pelayanan" "jam" "icon";
+        font-size: 9px;
+        font-weight: 100;
+        line-height: 10px;
+        
+    }
+    #judul_footer {
+        font-weight: 900;
+        line-height: normal !important;
+        font-size: 12px;
+    }
+
+    
+    .boxlogin{
+        color: #FFFFFF;
+        border-radius: 20px;
+        margin-top: 30px;
+        display: flex;
+        flex-direction: row;
+        text-decoration: none;
+        padding: 5px;
+       
+        text-align: center;
+        align-items: center;
+        font-size: 20px;
+        margin-left: auto;
+        margin-right: 10px;
+        justify-content: center;
+        border: solid 1px  #FFFFFF;
+    }
+    .boxlogin p{
+        font-size: 15px;
+    }
+    main {
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: 1fr,1fr,4fr,4fr,3fr;
+        grid-template-rows: 1fr;
+        gap: 1em;
+        grid-template-areas: "ekir"
+                            "antrian"
+                             "syarat"
+                             "selesai"
+                             "berita";
+    }
+    #ekir_container {
+        grid-area: ekir;
+        display: flex;
+        flex-direction: column;
+        padding: 40px;
+        border-radius: 20px;
+        background-color: #8EB1C7; 
+        width: 90%;
+        margin-left: 0px;
+     
+    }
+    
+    #antrian_container {
+        grid-area: antrian;
+        display: flex;
+        padding: 40px;
+        border-radius: 20px;
+        background-color: #8EB1C7;
+        width: 90%;
+        margin-left: 0px;
+        
+    }
+    .syarat_box {
+        grid-area: syarat;
+        margin-left: 13%;
+    }
+    #judul_syarat {
+        font-weight: 900;
+        font-size: 25px;
+    }
+    #judul_syarat span {
+        font-weight: 100;
+        font-size: 20px;
+    }
+    #judul_syarat_container h6 {
+        font-weight: 100;
+        margin-top: 10px;
+        font-size: 15px;
+    }
+    #syaratitem_container {
+        display: grid;
+        grid-template-columns: repeat(1, 90%);
+        margin-top: 50px;
+        gap:20px;
+     
+    }
+  
+    .selesai_bg {
+        background-image: url("../src/bodypict.png");
+        grid-area: selesai;
+        margin-top: 50px;
+    }
+  
+    #kendaraan_container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        align-items: flex-start;
+        justify-content: center;
+        margin-top: 50px;
+        background-color: #8EB1C7;
+        padding: 30px;
+        border-radius: 20px;
+        margin-right: 20%;
+        
+    }
+ 
+  
+    #berita_box {
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(1, 80%);
+        align-items: center;
+    }
+
+
+
+}
+
+

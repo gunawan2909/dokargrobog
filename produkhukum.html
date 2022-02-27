@@ -3,13 +3,19 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/produkstyle.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="css/FF.css">
+    <link rel="stylesheet" href="css/cdn.css" />
     <title>Dokar Grobog</title>
 </head>
 <body>
     <header>
-        <div id="navbar">
-            <img @click="showItems=!showItems" src="src/3Bar.png">
+        <div class="login">
+            <a class="boxlogin" href="http://dokar.dishub.grobogan.go.id/dokar/ekir/">
+                <p>Login</p>
+            </a>
+        </div>
+        <div >
+            <img id="navbar" @click="showItems=!showItems" src="src/3Bar.png">
         </div>
         <transition name="slide">
         <div v-show="showItems" class="slidebar">
@@ -71,7 +77,7 @@
             </div>
     </main>
     <footer>
-        <div class="footer_box">
+    
             <div id="footer_info">
                 <div>
                     <img src="src/image 23.png">
@@ -103,29 +109,30 @@
                 <a>libur</a>
             </div>
             <div id="icon_footer">
-                <div id="sosmed_box">    
+                <div id="sosmed_box">
                     <div id="sosmed">
-                        <img src="src/Linkedin.png">
-                        <img src="src/FB.png">
-                        <img src="src/IG.png">
+                        <a href=""><img src="src/Linkedin.png"></a>
+                        <a href="https://web.facebook.com/profile.php?id=100069166300956"><img src="src/FB.png"></a>
+                        <a href="https://www.instagram.com/pkbdishubgrobogan/"><img src="src/IG.png" href></a>
                     </div>
                     <a>Copyright<span>&copy;</span> 2022 Dishub Grobogan</a>
                 </div>
                 <div>
                     <img src="src/TUGU.png">
                 </div>
-            </div>
+         
         </div>
     </footer>
-<script src="https://unpkg.com/vue@next"></script>
-<script>
-    Vue.createApp ({
-        data() {
-            return{
-                showItems: false,
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    showItems: false,
+                }
             }
-        }
-    }).mount('body')
-</script>
+        }).mount('body')
+    </script>
 </body>
+
 </html>
