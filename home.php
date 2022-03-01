@@ -1,3 +1,19 @@
+<?php
+include 'json.php';
+session_start();
+foreach($data_kir['tipe'] as $kir):
+endforeach;
+
+if (isset($_POST["go"])) {
+
+    $_SESSION['Counter'] = $_POST["go"];
+
+    header("Location: berita.php");
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,11 +38,11 @@
                 <div>
                     <img src="src/image 23.png">
                 </div>
-                <a href="home.html">Home</a>
-                <a href="profile.html">Profil</a>
-                <a href="pelayanan.html">Pelayanan</a>
-                <a href="produkhukum.html">Produk Hukum</a>
-                <a href="hubungi.html">Hubungi Kami</a>
+                <a href="home.php">Home</a>
+                <a href="profile.php">Profil</a>
+                <a href="pelayanan.php">Pelayanan</a>
+                <a href="produkhukum.php">Produk Hukum</a>
+                <a href="hubungi.php">Hubungi Kami</a>
             </div>
         </transition>
         <div class="login">
@@ -66,7 +82,7 @@
                         <img src="src/help.png">
                     </div>
                 </div>
-                <a id="cari_button">CARI</a>
+                <button id="cari_button">CARI</button>
             </div>
         </div>
         <div id="antrian_container">
@@ -295,42 +311,53 @@
                 <h6>Mengenal pengujian kendaraan bermotor Dishub Grobogan lebih jauh</h6>
             </div>
             <div id="berita_box">
-                <div id="berita">
-                    <div>
-                        <img src="./src/berita.png">
+                <?php foreach ($berita['tipe'] as $index => $beritas) :
+                    $con = 0; ?>
+                    <div id="berita">
+                        <div>
+                            <img style="border-radius: 20px" id="fotoberita" src="<?= $beritas['fotopertama'] ?>">
+                        </div>
+                        <div id="isiberita_box">
+                            <a id="judul_berita"> <?= $beritas['judul'] ?></a>
+                            <h6 id="isiberita"><?= $beritas['isi'] ?></h6>
+                            <form method="POST" action="">
+                                <button id="selengkapnya" type="submit" name="go" value="<?= $index ?>">Selanjutnya</button>
+                            </form>
+
+                        </div>
+
                     </div>
-                    <div id="isiberita_box">
-                        <a id="judul_berita">PENGUJIAN KIR DI DISHUB GROBOGAN MULAI SEPI, INI FAKTOR PEMICUNYA</a>
-                        <h6 id="isiberita">GROBOGAN, Radar Kudus - Dalam sepekan ini pengujian KIR kendaraan di Dinas
-                            Perhubungan (Dishub) Grobogan mengalami</h6>
-                        <h6 id="selengkapnya">Selengkapnya</h6>
-                    </div>
-                </div>
-                <div id="berita">
-                    <div>
-                        <img src="./src/berita.png">
-                    </div>
-                    <div id="isiberita_box">
-                        <a id="judul_berita">PENGUJIAN KIR DI DISHUB GROBOGAN MULAI SEPI, INI FAKTOR PEMICUNYA</a>
-                        <h6 id="isiberita">GROBOGAN, Radar Kudus - Dalam sepekan ini pengujian KIR kendaraan di Dinas
-                            Perhubungan (Dishub) Grobogan mengalami</h6>
-                        <h6 id="selengkapnya">Selengkapnya</h6>
-                    </div>
-                </div>
-                <div id="berita">
-                    <div>
-                        <img src="./src/berita.png">
-                    </div>
-                    <div id="isiberita_box">
-                        <a id="judul_berita">PENGUJIAN KIR DI DISHUB GROBOGAN MULAI SEPI, INI FAKTOR PEMICUNYA</a>
-                        <h6 id="isiberita">GROBOGAN, Radar Kudus - Dalam sepekan ini pengujian KIR kendaraan di Dinas
-                            Perhubungan (Dishub) Grobogan mengalami</h6>
-                        <h6 id="selengkapnya">Selengkapnya</h6>
-                    </div>
-                </div>
+                <?php endforeach; ?>
             </div>
         </div>
+        <div class="alert">
+            <h3 id="judul">Selamat Datang Tuan <br><?= $kir['namapemilik'] ?></h3>
+            <p>Nomor Kendaraan </p>
+            <p>:<?= $kir['nopol'] ?></p>
+            <p>Nomor Uji </p>
+            <p>:<?= $kir['nouji'] ?></p>
+            <p>Nama Pemilik Kendaraan</p>
+            <p>:<?= $kir['namapemilik'] ?></p>
+            <p>Masa Berlaku Uji</p>
+            <p>:<?= $kir['habisuji'] ?></p>
+            <p>Besar Biyaya Uji</p>
+            <p>:Rp.<?= $kir['nominal_retribusi'] ?></p>
+            <p>Nomor Mesin</p>
+            <P>-</P>
+            <p>Nomor Rangka </p>
+            <P>-</P>
+            <button id="tombol">close</button>
+        </div>
     </main>
+    <?php
+    if (isset($_POST["go"])) {
+
+        $_SESSION['Counter'] = $_POST["go"];
+
+        header("Location: berita.php");
+    }
+    ?>
+
     <footer>
 
         <div id="footer_info">
@@ -391,6 +418,24 @@
             }
         }).mount('body')
     </script>
+<script>
+ const   alert = document.querySelector('.alert');
+ const   close = document.querySelector('#tombol');
+ const   show = document.querySelector('#cari_button');
+
+ function hapus(){
+     alert.style.opacity = 0;
+ }
+ function liat(){
+     alert.style.opacity = 1;
+ }
+ close.onclick = hapus;
+ show.onclick = liat;
+
+    
+</script>
+</body>
+</body>
 </body>
 
 </html>

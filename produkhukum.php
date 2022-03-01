@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/hubungi.css">
+    <link rel="stylesheet" href="css/produkstyle.css">
     <link rel="stylesheet" href="css/FF.css">
     <link rel="stylesheet" href="css/cdn.css" />
     <title>Dokar Grobog</title>
 </head>
-
 <body>
     <header>
         <div class="login">
@@ -16,23 +14,23 @@
                 <p>Login</p>
             </a>
         </div>
-        <div>
+        <div >
             <img id="navbar" @click="showItems=!showItems" src="src/3Bar.png">
         </div>
         <transition name="slide">
-            <div v-show="showItems" class="slidebar">
-                <div id="closebtn">
-                    <button @click="showItems=!showItems" id="closebtn">X</button>
-                </div>
-                <div>
-                    <img src="src/image 23.png">
-                </div>
-                <a href="home.html">Home</a>
-                <a href="profile.html">Profil</a>
-                <a href="pelayanan.html">Pelayanan</a>
-                <a href="produkhukum.html">Produk Hukum</a>
-                <a href="hubungi.html">Hubungi Kami</a>
+        <div v-show="showItems" class="slidebar">
+            <div id="closebtn">
+                <button @click="showItems=!showItems" id="closebtn">X</button>
             </div>
+            <div>
+                <img src="src/image 23.png">
+            </div>
+            <a href="home.php">Home</a>
+                <a href="profile.php">Profil</a>
+                <a href="pelayanan.php">Pelayanan</a>
+                <a href="produkhukum.php">Produk Hukum</a>
+                <a href="hubungi.php">Hubungi Kami</a>
+        </div>
         </transition>
         <div>
             <div class="logo_box">
@@ -43,7 +41,7 @@
                 </div>
             </div>
             <div class="NamaPage">
-                <h1 id="NamaPageJudul">HUBUNGI KAMI</h1>
+                <h1 id="NamaPageJudul">PRODUK HUKUM</h1>
                 <div id="garisbawah"></div>
 
             </div>
@@ -55,39 +53,31 @@
             </div>
         </div>
     </header>
-
-
-    <div class="KontakKami">
-        <div id="Kontent">
-            <h1 id="judulKonteks">Kontak <span>Kami</span></h1>
-            <p id="KeteranganKonteks">Silahkan hubungi kami melalui kontak atau melalui form di bawah ini</p>
-            <div id="KontenSosial">
-                <a href="https://twitter.com/PKBDishubGrob"><img id="IconKontenSosial" src="src/Twitter.png"></a>
-                <p id="NamaSosialMedia">@pkbdishubgrob</p>
+    <main>
+            <div id="judul_box">
+                <a>Download <span>Produk</span></a>
+                <h6>Silahkan lihat atau unduh dokumen terkait produk hukum di bawah ini</h6>
             </div>
-            <div id="KontenSosial">
-                <a href="mailto:pkb.dishubgrobogan@gmail.com"><img id="IconKontenSosial" src="src/Gmail.png"></a>
-                <p id="NamaSosialMedia">pkb.dishubgrobogan@gmail.com</p>
+            <div id="produk_container">
+                <div id="item_container">
+                    <a id="judul_item">Deskripsi File</a>
+                    <a id="format_item">.pdf</a>
+                    <button id="downloadb">Download</button>
+                </div>
+                <div id="item_container">
+                    <a id="judul_item">Deskripsi File</a>
+                    <a id="format_item">.pdf</a>
+                    <button id="downloadb">Download</button>
+                </div>
+                <div id="item_container">
+                    <a id="judul_item">Deskripsi File</a>
+                    <a id="format_item">.pdf</a>
+                    <button id="downloadb">Download</button>
+                </div>
             </div>
-            <div id="KontenSosial">
-                <a href="https://web.facebook.com/profile.php?id=100069166300956"><img id="IconKontenSosial" src="src/Facebook.png"></a>
-                <p id="NamaSosialMedia">Pengujian Kendaraan Bermotor Dinas Perhubungan Kabupaten Grobogan</p>
-            </div>
-            <div id="KontenSosial">
-                <a href="https://www.instagram.com/pkbdishubgrobogan/"><img id="IconKontenSosial" src="src/Instragram.png"></a>
-                <p id="NamaSosialMedia">@pkbdishubgrobogan</p>
-            </div>
-
-        </div>
-    </div>
-
-
-
-
-
-
+    </main>
     <footer>
-      
+    
             <div id="footer_info">
                 <div>
                     <img src="src/image 23.png">
@@ -130,8 +120,8 @@
                 <div>
                     <img src="src/TUGU.png">
                 </div>
-            </div>
-     
+         
+        </div>
     </footer>
     <script src="https://unpkg.com/vue@next"></script>
     <script>

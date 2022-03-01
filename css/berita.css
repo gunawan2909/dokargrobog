@@ -1,0 +1,172 @@
+main{
+    margin: 10%;
+    display: grid;
+    gap: 10px;
+    grid-template-areas: "isi berita"
+                         
+  
+}
+.containerberita{
+    grid-area: isi;
+    display: flex;
+    flex-direction: column;
+   
+    padding-left: 10%;
+}
+
+.Judul{
+  
+    height: fit-content;
+    width: 80%;
+    font-size: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.Gambar{
+
+justify-self: center;
+width: 80%;
+border-radius: 30px;
+}
+#tt{
+
+
+width: 80%;
+font-size: 12px;
+margin-top: px;
+margin-bottom: 20px;
+
+}
+#isi{
+ 
+    height: fit-content;
+    width: 80%;
+    text-align: justify;
+    line-height: 30px;
+}
+.berita_container {
+    grid-area: berita;
+    border: 1px solid #c0c0c0; 
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+   
+    margin-top: 10%;
+    margin-bottom: 10%;
+
+}
+#judul_berita_container a {
+    font-weight: 900;
+    font-size: 20px;
+    
+}
+#judul_berita_container span {
+    font-weight: 100;
+}
+#judul_berita_container h6 {
+    font-weight: 100;
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+#berita_box {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(1, 90%);
+    align-items: center;
+    padding: 20px;
+    gap: 30px;
+    
+    
+}
+#berita {
+    border-radius: 20px;
+    box-shadow: 2px 0px 2px 0px #c0c0c0;
+    width: 250px;
+}
+
+#fotoberita {
+    width: 250px;
+    border-radius: 20px;
+    
+}
+#isiberita_box {
+    padding: 30px;
+    
+}
+#judul_berita {
+    font-weight: 900;
+    font-size: 14px;
+}
+#isiberita_box #isiberita {
+    font-size: 12px;
+    font-weight: 100;
+    margin-top: 20px;
+    height: 70px;
+    text-align: justify;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow:ellipsis;
+}
+#selengkapnya{
+    margin-top: 30px;
+    text-align: right;
+    color: #8EB1C7;
+    background: #FFFFFF;
+    margin-left: auto;
+}
+
+@media (max-width: 1440px) {
+    main{
+     
+        grid-template-areas: "isi " "berita"
+    
+
+    }
+    .Judul{
+  
+        height: fit-content;
+        width: 80%;
+        font-size: 20px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    #berita_box {
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(3, 30%);
+        align-items: center;
+    
+    }
+      
+   
+}
+
+
+@media (max-width: 992px) {
+    main{
+       
+        grid-template-areas: "isi" "berita";
+    }
+    #berita_box {
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(1, 30%);
+        align-items: center;
+    }
+    .berita_container {
+        align-items: center;
+    }
+    
+}
+
+@media (max-width: 768px) {
+    main{
+        grid-template-areas: "isi" "berita";
+    }
+    #berita_box {
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(1, 30%);
+        align-items: center;
+    }
+}

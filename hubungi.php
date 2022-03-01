@@ -3,7 +3,7 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/pelayanan.css">
+    <link rel="stylesheet" href="css/hubungi.css">
     <link rel="stylesheet" href="css/FF.css">
     <link rel="stylesheet" href="css/cdn.css" />
     <title>Dokar Grobog</title>
@@ -11,6 +11,11 @@
 
 <body>
     <header>
+        <div class="login">
+            <a class="boxlogin" href="http://dokar.dishub.grobogan.go.id/dokar/ekir/">
+                <p>Login</p>
+            </a>
+        </div>
         <div>
             <img id="navbar" @click="showItems=!showItems" src="src/3Bar.png">
         </div>
@@ -22,18 +27,13 @@
                 <div>
                     <img src="src/image 23.png">
                 </div>
-                <a href="home.html">Home</a>
-                <a href="profile.html">Profil</a>
-                <a href="pelayanan.html">Pelayanan</a>
-                <a href="produkhukum.html">Produk Hukum</a>
-                <a href="hubungi.html">Hubungi Kami</a>
+                <a href="home.php">Home</a>
+                <a href="profile.php">Profil</a>
+                <a href="pelayanan.php">Pelayanan</a>
+                <a href="produkhukum.php">Produk Hukum</a>
+                <a href="hubungi.php">Hubungi Kami</a>
             </div>
         </transition>
-        <div class="login">
-            <a class="boxlogin" href="http://dokar.dishub.grobogan.go.id/dokar/ekir/">
-                <p>Login</p>
-            </a>
-        </div>
         <div>
             <div class="logo_box">
                 <img id="logo" src="src/image 23.png">
@@ -43,7 +43,7 @@
                 </div>
             </div>
             <div class="NamaPage">
-                <h1 id="NamaPageJudul">PELAYANAN</h1>
+                <h1 id="NamaPageJudul">HUBUNGI KAMI</h1>
                 <div id="garisbawah"></div>
 
             </div>
@@ -56,70 +56,35 @@
         </div>
     </header>
 
-    <main>
-        <div class="JenisPengujian">
-            <div id="JenisPenujianKonteks">
-                <h1 id="judulKonteks">Jenis <span>Pengujian</span></h1>
-                <p id="KeteranganKonteks">Jenis Pengujian yang dilakukan di Pengujian Kendaraan Bermotor Dishub Grobogan
-                </p>
 
-                <div id="KolomJenis">
-                    <div id="JenisKonteks">
-                        <img id="IconJenis" src="src/ujibaru.png">
-                        <h1 id="TeksKonteks">Uji<br>Baru</h1>
-                    </div>
-                    <div id="JenisKonteks">
-                        <img id="IconJenis" src="src/ujiberkala.png">
-                        <h1 id="TeksKonteks">Uji<br>Berkala</h1>
-                    </div>
-                    <div id="JenisKonteks">
-                        <img id="IconJenis" src="src/numpangmasuk.png">
-                        <h1 id="TeksKonteks">NU<br>Masuk</h1>
-                    </div>
-                    <div id="JenisKonteks">
-                        <img id="IconJenis" src="src/numpangkeluar.png">
-                        <h1 id="TeksKonteks">NU<br>Keluar</h1>
-                    </div>
-                    <div id="JenisKonteks">
-                        <img id="IconJenis" src="src/mutasimasuk.png">
-                        <h1 id="TeksKonteks">Mutasi<br>Masuk</h1>
-                    </div>
-                    <div id="JenisKonteks">
-                        <img id="IconJenis" src="src/mutasikeluar.png">
-                        <h1 id="TeksKonteks">Mutasi<br>Keluar</h1>
-                    </div>
-                </div>
+    <div class="KontakKami">
+        <div id="Kontent">
+            <h1 id="judulKonteks">Kontak <span>Kami</span></h1>
+            <p id="KeteranganKonteks">Silahkan hubungi kami melalui kontak atau melalui form di bawah ini</p>
+            <div id="KontenSosial">
+                <a href="https://twitter.com/PKBDishubGrob"><img id="IconKontenSosial" src="src/Twitter.png"></a>
+                <p id="NamaSosialMedia">@pkbdishubgrob</p>
             </div>
+            <div id="KontenSosial">
+                <a href="mailto:pkb.dishubgrobogan@gmail.com"><img id="IconKontenSosial" src="src/Gmail.png"></a>
+                <p id="NamaSosialMedia">pkb.dishubgrobogan@gmail.com</p>
+            </div>
+            <div id="KontenSosial">
+                <a href="https://web.facebook.com/profile.php?id=100069166300956"><img id="IconKontenSosial" src="src/Facebook.png"></a>
+                <p id="NamaSosialMedia">Pengujian Kendaraan Bermotor Dinas Perhubungan Kabupaten Grobogan</p>
+            </div>
+            <div id="KontenSosial">
+                <a href="https://www.instagram.com/pkbdishubgrobogan/"><img id="IconKontenSosial" src="src/Instragram.png"></a>
+                <p id="NamaSosialMedia">@pkbdishubgrobogan</p>
+            </div>
+
         </div>
-        <div id="AlurPengujian">
-            <div id="JenisPenujianKonteks">
-                <h1 id="judulKonteks">Penguji <span>Kendaaan</span></h1>
-                <p id="KeteranganKonteks">Alur pengujian yang dilakukan di Pengujian Kendaraan Bermotor Dishub Grobogan
-                </p>
-                <img id="poster" src="src/Poster Masuk.png">
-                <img id="poster" src="src/Poster keluar.png">
-            </div>
-
-            <div id="JenisPenujianKonteks">
-                <h1 id="judulKonteks">Tarif <span>Retribusi</span></h1>
-                <p id="KeteranganKonteks">Besaran tarif retribusi berdasarkan penggolongan kendaraan adalah sebagai
-                    berikut</p>
-                <img id="poster" src="src/Poster Tarif.png">
-            </div>
-
-            <div id="JenisPenujianKonteks">
-                <h1 id="judulKonteks">Syarat <span>Pengujian</span></h1>
-                <p id="KeteranganKonteks">Penuhi persyaratan berikut agar dapat melakukan pengujian kendaraan bermotor
-                    di Dishub Grobogan</p>
-                <img id="poster" src="src/Poster Syarat.png">
-
-            </div>
-        </div>
+    </div>
 
 
 
 
-    </main>
+
 
     <footer>
       
@@ -166,7 +131,7 @@
                     <img src="src/TUGU.png">
                 </div>
             </div>
-    
+     
     </footer>
     <script src="https://unpkg.com/vue@next"></script>
     <script>

@@ -24,6 +24,44 @@ main {
   
    
 }
+      
+    
+.alert{
+    position: absolute;
+    top: 50%;  /* position the top  edge of the element at the middle of the parent */
+    left: 50%; /* position the left edge of the element at the middle of the parent */
+    transform: translate(-50%, -50%);       
+    display: grid;
+    grid-template-areas: "Judul Judul""1 2" "3 4" "5 6" "7 8" "9 0" "11 12" "13 14" "tombol tombol";
+    column-gap: 20px;
+    row-gap: 0px;
+    padding: 10px;
+    border-radius: 20px;
+    border: 4px solid rgb(212, 206, 206);
+    opacity: 0;
+    background-color: #FFFFFF;
+}
+.alert p{
+    color: #000000;
+
+}
+#judul{
+    grid-area: Judul;
+    text-align: center;
+    color: #8EB1C7;
+}
+
+#tombol{
+    grid-area: tombol;
+    border-radius: 20px;
+    font-weight: 500;
+   font-size: 20px;
+   background-color: #8EB1C7;
+   color: aliceblue;
+   border: 1px;
+   cursor: pointer;
+   margin-top: 20px;
+}
 
 #input_container {
     display: flex;
@@ -59,6 +97,7 @@ main {
     border-radius: 20px;
     color: #FFFFFF;
     font-size: 15px;
+    cursor: pointer;
 }
 #petunjuk {
     display: flex;
@@ -245,9 +284,10 @@ main {
     grid-area: berita;
     display: flex;
     flex-direction: column;
- margin-left: 13%;
+    margin-left: 13%;
     margin-top: 10%;
     margin-bottom: 10%;
+
 }
 #judul_berita_container a {
     font-weight: 900;
@@ -265,32 +305,43 @@ main {
     display: grid;
     grid-template-columns: repeat(3, 30%);
     align-items: center;
+    
 }
 #berita {
     border-radius: 20px;
     box-shadow: 2px 0px 2px 0px #c0c0c0;
     max-width: 250px;
 }
-#berita_box img {
+
+#fotoberita {
     width: 250px;
+    border-radius: 20px;
+    
 }
 #isiberita_box {
     padding: 30px;
+    
 }
 #judul_berita {
     font-weight: 900;
     font-size: 14px;
 }
-#isiberita {
-    font-size: 10px;
+#isiberita_box #isiberita {
+    font-size: 12px;
     font-weight: 100;
     margin-top: 20px;
+    height: 70px;
     text-align: justify;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow:ellipsis;
 }
-#selengkapnya {
+#selengkapnya{
     margin-top: 30px;
     text-align: right;
     color: #8EB1C7;
+    background: #FFFFFF;
+    margin-left: auto;
 }
 
 @media (max-width: 1440px) {
@@ -316,7 +367,7 @@ main {
         border-radius: 20px;
         background-color: #8EB1C7; 
         width: 80%;
-        margin-left: 0px;
+ 
         margin-left: 5%;
      
     }

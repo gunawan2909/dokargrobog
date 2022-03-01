@@ -27,11 +27,11 @@
                 <div>
                     <img src="src/image 23.png">
                 </div>
-                <a href="home.html">Home</a>
-                <a href="profile.html">Profil</a>
-                <a href="pelayanan.html">Pelayanan</a>
-                <a href="produkhukum.html">Produk Hukum</a>
-                <a href="hubungi.html">Hubungi Kami</a>
+                <a href="home.php">Home</a>
+                <a href="profile.php">Profil</a>
+                <a href="pelayanan.php">Pelayanan</a>
+                <a href="produkhukum.php">Produk Hukum</a>
+                <a href="hubungi.php">Hubungi Kami</a>
             </div>
         </transition>
         <div class="login">
