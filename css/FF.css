@@ -131,7 +131,7 @@ header {
 }
 footer {
     background-color: #8EB1C7;
-    padding-top: 20px;
+    padding-top: 50px;
     display: grid;
     gap: 10px;
     grid-template-columns: 1fr,1fr,1fr,2fr;
@@ -139,6 +139,7 @@ footer {
     font-size: 15px;
     font-weight: 100;
     line-height: 20px;
+    
     
 }
 #footer_info {

@@ -6,6 +6,7 @@ main{
                          
   
 }
+a{text-decoration:none}
 .containerberita{
     grid-area: isi;
     display: flex;
@@ -94,8 +95,10 @@ margin-bottom: 20px;
     
 }
 #judul_berita {
-    font-weight: 900;
+    font-weight: 600;
     font-size: 14px;
+    text-decoration:none;
+    color: black;
 }
 #isiberita_box #isiberita {
     font-size: 12px;
@@ -108,11 +111,14 @@ margin-bottom: 20px;
     text-overflow:ellipsis;
 }
 #selengkapnya{
-    margin-top: 30px;
+    margin-top: 10px;
     text-align: right;
     color: #8EB1C7;
     background: #FFFFFF;
     margin-left: auto;
+    text-decoration:none
+
+    
 }
 
 @media (max-width: 1440px) {

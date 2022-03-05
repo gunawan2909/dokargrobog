@@ -1,13 +1,9 @@
 <?php
-include 'json.php';
-session_start();
-$counter= intval($_SESSION['Counter']);
-if( isset($_POST["go"]) ){
+include 'function.php';
 
-    $_SESSION['Counter']=$_POST["go"];
+$counter = intval($_GET['index']);
 
-    header("Location: berita.php");
-}
+
 
 
 ?>
@@ -71,48 +67,38 @@ if( isset($_POST["go"]) ){
     </header>
     <main>
         <div class="containerberita">
-        <img class="Gambar" src="<?=$berita['tipe'][$counter]['fotopertama']?>">
-        <H1 class="Judul"><?=$berita['tipe'][$counter]['judul']?></H1>
-        <h5 id="tt">Purwodadi <?=$berita['tipe'][$counter]['tgl']?></h5>
-        <p id="isi"><?=$berita['tipe'][$counter]['isi']?></p>
-      
+            <img class="Gambar" src="<?= $data_berita[$counter]['fotopertama'] ?>">
+            <H1 class="Judul"><?= $data_berita[$counter]['judul'] ?></H1>
+            <h5 id="tt">Purwodadi <?= $data_berita[$counter]['tgl'] ?></h5>
+            <p id="isi"><?= $data_berita[$counter]['isi'] ?></p>
+
         </div>
         <div class="berita_container">
             <div id="judul_berita_container">
                 <a>Berita <span>& Informasi</span></a>
             </div>
             <div id="berita_box">
-                <?php foreach($berita['tipe'] as $index=>$beritas):
-                    $con=0; ?>
-                <div id="berita">
-                    <div>
-                        <img style="border-radius: 20px" id="fotoberita" src="<?= $beritas['fotopertama']?>">
+            <?php foreach ($data_berita as $index => $berita) :
+                 ?>
+                    <div id="berita">
+                        <div>
+                            <img style="border-radius: 20px" id="fotoberita" src="<?= $berita['fotopertama'] ?>">
+                        </div>
+                        <div id="isiberita_box">
+                            <a id="judul_berita" href="berita.php?index=<?= $index ?>"> <?= $berita['judul'] ?></a><br>
+                          
+                            <a id="selengkapnya" href="berita.php?index=<?= $index ?>">Selengkapnya</a>
+                        </div>
                     </div>
-                    <div id="isiberita_box">
-                        <a id="judul_berita"> <?= $beritas['judul']?></a>
-                        
-                        <form  method="POST" action="">
-                           <button id="selengkapnya" type="submit" name="go" value="<?=$index?>">Selanjutnya</button>
-                        </form>
-                     
-                    </div>
-                    
-                </div>
-                <?php if($index=='5'){
-                    break;
-                } endforeach;?>
+                <?php
+                
+                if($index=='5'){break;}
+                endforeach; ?>
             </div>
         </div>
     </main>
-    
-    <?php 
-        if( isset($_POST["go"]) ){
 
-            $_SESSION['Counter']=$_POST["go"];
-        
-            header("Location: berita.php");
-        }
-    ?>     
+
     <footer>
 
         <div id="footer_info">
@@ -176,4 +162,3 @@ if( isset($_POST["go"]) ){
 </body>
 
 </html>
-

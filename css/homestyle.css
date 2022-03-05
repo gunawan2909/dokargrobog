@@ -45,7 +45,7 @@ main {
     color: #000000;
 
 }
-#judul{
+#judulpop{
     grid-area: Judul;
     text-align: center;
     color: #8EB1C7;
@@ -325,6 +325,8 @@ main {
 #judul_berita {
     font-weight: 900;
     font-size: 14px;
+    text-decoration:none;
+    color: black;
 }
 #isiberita_box #isiberita {
     font-size: 12px;
@@ -342,6 +344,7 @@ main {
     color: #8EB1C7;
     background: #FFFFFF;
     margin-left: auto;
+    text-decoration:none
 }
 
 @media (max-width: 1440px) {

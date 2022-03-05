@@ -1,15 +1,43 @@
 <?php
+include 'json.php';
+session_start();
+foreach ($data_kir['tipe'] as $kir) :
+endforeach;
 
-include 'function.php';
+if (isset($_POST["go"])) {
 
+    $_SESSION['Counter'] = $_POST["go"];
 
+    header("Location: berita.php");
+}
+function tanggal_indonesia($tanggal)
+{
 
+    $bulan = array(
+        1 =>       'Januari',
+        'Februari',
+        'Maret',
+        'April',
+        'Mei',
+        'Juni',
+        'Juli',
+        'Agustus',
+        'September',
+        'Oktober',
+        'November',
+        'Desember'
+    );
 
+    $var = explode('-', $tanggal);
+
+    return $var[2] . ' ' . $bulan[(int)$var[1]] . ' ' . $var[0];
+    // var 0 = tanggal
+    // var 1 = bulan
+    // var 2 = tahun
+}
 
 
 ?>
-
-
 
 
 <!DOCTYPE html>
@@ -73,15 +101,18 @@ include 'function.php';
         <div id="ekir_container">
             <a id="judulekir">E-KIR <span>GROBOGAN</span></a>
             <div id="input_container">
-                <div id="inputekir2">
-                    <input id="inputkir" type="text" placeholder="   NOMOR UJI">
+                <div method="post" action="" id="inputekir2">
+                    <form method="post" action="">
+                        <input id="inputkir" type="text" placeholder="   NOMOR UJI">
+                    </form>
                     <div id="petunjuk">
                         <a>Masukkan nomor uji</a>
                         <img src="src/help.png">
                     </div>
                 </div>
-                <button id="cari_button">CARI</button>
-
+                <form method="post" action="">
+                    <button id="cari_button">CARI</button>
+                </form>
             </div>
         </div>
         <div id="antrian_container">
@@ -193,21 +224,116 @@ include 'function.php';
                         kendaraannya</h6>
                 </div>
                 <div id="kendaraan_container">
-                    <?php
-                    foreach ($data_jenis_mobil as $jenis_mobil) : ?>
-                        <div id="kendaraan">
-                            <div>
-                                <img src="src/bakterbuka.png">
-                            </div>
-                            <div id="jenis_kendaraan">
-                                <a> <?= $jenis_mobil['jeniskendaraan'] ?></a>
-                                <h2 id="jmlkendaraan"> <?= $jenis_mobil['jumlah'] ?></h2>
-                            </div>
+                    <div id="kendaraan">
+                        <div>
+                            <img src="src/bakterbuka.png">
                         </div>
-                    <?php endforeach; ?>
+                        <div id="jenis_kendaraan">
+                            <a>Mobil Barang Bak Terbuka</a>
+                            <h2 id="jmlkendaraan">7834</h2>
+                        </div>
+                    </div>
+                    <div id="kendaraan">
+                        <div>
+                            <img src="src/mobilbarang.png">
+                        </div>
+                        <div id="jenis_kendaraan">
+                            <a>Mobil Barang</a>
+                            <h2 id="jmlkendaraan">5695</h2>
+                        </div>
+                    </div>
+                    <div id="kendaraan">
+                        <div>
+                            <img src="src/mobilbarang.png">
+                        </div>
+                        <div id="jenis_kendaraan">
+                            <a>Mobil Barang</a>
+                            <h2 id="jmlkendaraan">5695</h2>
+                        </div>
+                    </div>
+                    <div id="kendaraan">
+                        <div>
+                            <img src="src/mobilbarang.png">
+                        </div>
+                        <div id="jenis_kendaraan">
+                            <a>Mobil Barang</a>
+                            <h2 id="jmlkendaraan">5695</h2>
+                        </div>
+                    </div>
+                    <div id="kendaraan">
+                        <div>
+                            <img src="src/mobilbarang.png">
+                        </div>
+                        <div id="jenis_kendaraan">
+                            <a>Mobil Barang</a>
+                            <h2 id="jmlkendaraan">5695</h2>
+                        </div>
+                    </div>
+                    <div id="kendaraan">
+                        <div>
+                            <img src="src/mobilbarang.png">
+                        </div>
+                        <div id="jenis_kendaraan">
+                            <a>Mobil Barang</a>
+                            <h2 id="jmlkendaraan">5695</h2>
+                        </div>
+                    </div>
+                    <div id="kendaraan">
+                        <div>
+                            <img src="src/buskecil.png">
+                        </div>
+                        <div id="jenis_kendaraan">
+                            <a>Mobil Bus Kecil</a>
+                            <h2 id="jmlkendaraan">776</h2>
+                        </div>
+                    </div>
+                    <div id="kendaraan">
+                        <div>
+                            <img src="src/baktertutup.png">
+                        </div>
+                        <div id="jenis_kendaraan">
+                            <a>Mobil Barang Bak Tertutup</a>
+                            <h2 id="jmlkendaraan">476</h2>
+                        </div>
+                    </div>
+                    <div id="kendaraan">
+                        <div>
+                            <img src="src/bussedang.png">
+                        </div>
+                        <div id="jenis_kendaraan">
+                            <a>Mobil Bus Sedang</a>
+                            <h2 id="jmlkendaraan">270</h2>
+                        </div>
+                    </div>
+                    <div id="kendaraan">
+                        <div>
+                            <img src="src/busbesar.png">
+                        </div>
+                        <div id="jenis_kendaraan">
+                            <a>Mobil Bus Besar</a>
+                            <h2 id="jmlkendaraan">121</h2>
+                        </div>
+                    </div>
+                    <div id="kendaraan">
+                        <div>
+                            <img src="src/mobilpenumpang.png">
+                        </div>
+                        <div id="jenis_kendaraan">
+                            <a>Mobil Penumpang</a>
+                            <h2 id="jmlkendaraan">46</h2>
+                        </div>
+                    </div>
+                    <div id="kendaraan">
+                        <div>
+                            <img src="src/penarik.png">
+                        </div>
+                        <div id="jenis_kendaraan">
+                            <a>Mobil Penarik</a>
+                            <h2 id="jmlkendaraan">4</h2>
+                        </div>
+                    </div>
                 </div>
             </div>
-
         </div>
         <div class="berita_container">
             <div id="judul_berita_container">
@@ -215,27 +341,26 @@ include 'function.php';
                 <h6>Mengenal pengujian kendaraan bermotor Dishub Grobogan lebih jauh</h6>
             </div>
             <div id="berita_box">
-                <?php foreach ($data_berita as $index => $berita) :
-                ?>
+                <?php foreach ($berita['tipe'] as $index => $beritas) :
+                    $con = 0; ?>
                     <div id="berita">
                         <div>
-                            <img style="border-radius: 20px" id="fotoberita" src="<?= $berita['fotopertama'] ?>">
+                            <img style="border-radius: 20px" id="fotoberita" src="<?= $beritas['fotopertama'] ?>">
                         </div>
                         <div id="isiberita_box">
-                            <a id="judul_berita" href="berita.php?index=<?= $index ?>"> <?= $berita['judul'] ?></a>
-                            <h6 id="isiberita"><?= $berita['isi'] ?></h6>
-                            <a id="selengkapnya" href="berita.php?index=<?= $index ?>">Selengkapnya</a>
-                        </div>
-                    </div>
-                <?php
+                            <a id="judul_berita"> <?= $beritas['judul'] ?></a>
+                            <h6 id="isiberita"><?= $beritas['isi'] ?></h6>
+                            <form method="POST" action="">
+                                <button id="selengkapnya" type="submit" name="go" value="<?= $index ?>">Selanjutnya</button>
+                            </form>
 
-                    if ($index == '5') {
-                        break;
-                    }
-                endforeach; ?>
+                        </div>
+
+                    </div>
+                <?php endforeach; ?>
             </div>
         </div>
-        <!-- <div class="alert">
+        <div class="alert">
             <h3 id="judulpop">Selamat Datang Tuan <br><?= $kir['namapemilik'] ?></h3>
             <p>Nomor Kendaraan </p>
             <p>:<?= $kir['nopol'] ?></p>
@@ -252,8 +377,25 @@ include 'function.php';
             <p>Nomor Rangka </p>
             <P>-</P>
             <button id="tombol">close</button>
-        </div> -->
+        </div>
     </main>
+    <?php
+ 
+    if (isset($_POST["go"])) {
+        $_SESSION['Counter'] = $_POST["go"];
+        header("Location: berita.php");
+    }
+    if(isset($_POST['cari_button'])){
+        foreach($kir as $indek_kir => $data_user):
+            // if($_POST['inputkir']==$data_user['nouji']){
+               
+            // }
+        endforeach;
+    }
+
+
+
+    ?>
 
     <footer>
 
@@ -315,11 +457,11 @@ include 'function.php';
             }
         }).mount('body')
     </script>
-    <!-- <script>
+    <script>
         const alert = document.querySelector('.alert');
-
+        const close = document.querySelector('#tombol');
         const show = document.querySelector('#cari_button');
-
+        const data = document.querySelector('#inputkir');
 
         function hapus() {
             alert.style.opacity = 0;
@@ -330,7 +472,7 @@ include 'function.php';
         }
         close.onclick = hapus;
         show.onclick = liat;
-    </script> -->
+    </script>
 </body>
 
 
