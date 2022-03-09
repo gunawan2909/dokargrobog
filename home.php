@@ -1,12 +1,5 @@
 <?php
-
 include 'function.php';
-
-
-
-
-
-
 ?>
 
 
@@ -72,17 +65,17 @@ include 'function.php';
     <main>
         <div id="ekir_container">
             <a id="judulekir">E-KIR <span>GROBOGAN</span></a>
-            <div id="input_container">
+            <form method="post" action="" id="input_container">
                 <div id="inputekir2">
-                    <input id="inputkir" type="text" placeholder="   NOMOR UJI">
+                    <input id="inputkir" name="input_kir" type="text" placeholder="   NOMOR UJI">
                     <div id="petunjuk">
                         <a>Masukkan nomor uji</a>
                         <img src="src/help.png">
                     </div>
                 </div>
-                <button id="cari_button">CARI</button>
+                <button id="cari_button" type="submit" name="submit">CARI</button>
+            </form>
 
-            </div>
         </div>
         <div id="antrian_container">
             <div id="antrian">
@@ -200,7 +193,7 @@ include 'function.php';
                                 <img src="src/bakterbuka.png">
                             </div>
                             <div id="jenis_kendaraan">
-                                <a> <?= $jenis_mobil['jeniskendaraan'] ?></a>
+                                <a> <?= ucwords(strtolower($jenis_mobil['jeniskendaraan'])) ?></a>
                                 <h2 id="jmlkendaraan"> <?= $jenis_mobil['jumlah'] ?></h2>
                             </div>
                         </div>
@@ -235,24 +228,7 @@ include 'function.php';
                 endforeach; ?>
             </div>
         </div>
-        <!-- <div class="alert">
-            <h3 id="judulpop">Selamat Datang Tuan <br><?= $kir['namapemilik'] ?></h3>
-            <p>Nomor Kendaraan </p>
-            <p>:<?= $kir['nopol'] ?></p>
-            <p>Nomor Uji </p>
-            <p>:<?= $kir['nouji'] ?></p>
-            <p>Nama Pemilik Kendaraan</p>
-            <p>:<?= $kir['namapemilik'] ?></p>
-            <p>Masa Berlaku Uji</p>
-            <p>:<?= $kir['habisuji'] ?></p>
-            <p>Besar Biyaya Uji</p>
-            <p>:Rp.<?= $kir['nominal_retribusi'] ?></p>
-            <p>Nomor Mesin</p>
-            <P>-</P>
-            <p>Nomor Rangka </p>
-            <P>-</P>
-            <button id="tombol">close</button>
-        </div> -->
+
     </main>
 
     <footer>
@@ -315,22 +291,15 @@ include 'function.php';
             }
         }).mount('body')
     </script>
-    <!-- <script>
+    <script>
         const alert = document.querySelector('.alert');
-
-        const show = document.querySelector('#cari_button');
-
 
         function hapus() {
             alert.style.opacity = 0;
         }
-
-        function liat() {
-            alert.style.opacity = 1;
-        }
         close.onclick = hapus;
-        show.onclick = liat;
-    </script> -->
+        alert.inne
+    </script>
 </body>
 
 

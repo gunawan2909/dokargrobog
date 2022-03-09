@@ -1,0 +1,155 @@
+
+main {
+
+    margin-top: 20px;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr,1fr,4fr,4fr,3fr;
+    grid-template-rows: 1fr;
+    gap: 1em;
+    grid-template-areas: "panel"
+    "Judul"
+                        "tabel"
+            
+}
+
+.PanelAtas{
+    grid-area: panel;
+ 
+   align-content: center;
+   margin-bottom: 10px;
+}
+.PanelAtas h1{
+text-align: center;
+font-size: 24px;
+margin-bottom: 10px;
+}
+
+#antrian_container {
+    grid-area: antrian;
+    display: flex;
+    padding: 40px;
+
+    background-color: #8EB1C7;
+    
+    align-content: center;
+    justify-content: center;
+    
+
+    
+}
+#judulantrian {
+    font-weight: 900;
+}
+#judulantrian span {
+    font-weight: 100;
+    font-size: 10px;
+}
+#tanggal_container {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    border-radius: 20px;
+    background-color: #222222;
+    color: #FFFFFF;
+    font-size: 10px;
+    padding: 5px 15px;
+    border-radius: 20px;
+}
+#tanggal_container img {
+    width: 35%;
+    padding: 5px 10px;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    margin-right: 10px;
+}
+#jmlantrian {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    padding: 0px 15px;
+    border-radius: 20px;
+    background-color: #FFFFFF;
+    margin-left: 10px;
+}
+#jml {
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.Tabel{
+    display: grid;
+    grid-area: tabel;
+    grid-template-areas: "tabel mobil";
+}
+#JudulTabel{
+    text-align: center;
+    grid-area: Judul;
+}
+#LogoMobil{
+    grid-area: mobil;
+    margin-left: 15px;
+    color: #FFFFFF;
+    background-color: #8EB1C7;
+    margin-left: auto;
+    margin-right: 30px;
+    width: 100px;
+    height: 90px;
+    border-radius: 20px;
+    justify-content: center;
+    align-content: center;
+    padding: 20px;
+    
+}
+#LogoMobil img {
+    height: 80px;
+}
+
+
+table{
+    grid-area: tabel;
+    justify-self: center;
+}
+table td{
+    width: 400px;
+    
+}
+
+#login_btn{
+    border-radius: 20px;
+    border: 2px solid #8EB1C7;
+}
+
+
+@media (max-width: 1440px) {
+    
+
+}
+
+@media (max-width: 992px) {
+    
+}
+@media (max-width: 768px) {
+    .Tabel{
+        display: grid;
+        grid-area: tabel;
+        grid-template-areas: "tabel" "mobil";
+        
+    }
+    #LogoMobil{
+        grid-area: mobil;
+        margin-left: 15px;
+        color: #FFFFFF;
+        background-color: #8EB1C7;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        width: 100px;
+        height: 90px;
+        border-radius: 20px;
+        justify-content: center;
+        align-content: center;
+        padding: 20px;}
+}
